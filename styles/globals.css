@@ -3,6 +3,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+body {
+	overflow: hidden;
+}
 
 h1 {
 	position: absolute;
@@ -11,4 +14,25 @@ h1 {
 	transform: translate(-50%, -50%);
 	text-transform: uppercase;
 	font-size: 3rem;
+	cursor: pointer;
+}
+
+.main-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: contain;
+}
+
+.bg-img {
+	position: absolute;
+	top: -2rem;
+	left: -2rem;
+	right: -2rem;
+	bottom: -2rem;
+	object-fit: cover;
+	z-index: -2;
+	filter: blur(16px);
 }
