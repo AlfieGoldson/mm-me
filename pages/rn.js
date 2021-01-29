@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
-const titles = [
-	'🤑🤑🤑🤑🤑',
-	'💰MONEY MATCH💰',
-	'💸🤑🤑🤑💸',
-	'💰MONEY MATCH💰',
-];
+const titleIcons = ['🤑', '💰', '💸', '💰'];
 
 export default function RN() {
 	const [open, setOpen] = useState(false);
@@ -14,15 +9,19 @@ export default function RN() {
 
 	useEffect(() => {
 		setTimeout(() => {
-			setTitleIndex(titleIndex >= titles.length - 1 ? 0 : titleIndex + 1);
-		}, 1000);
+			setTitleIndex(
+				titleIndex >= titleIcons.length - 1 ? 0 : titleIndex + 1
+			);
+		}, 250);
 	}, [titleIndex]);
 
 	return (
 		<>
 			<Head>
 				<link rel='shortcut icon' href='/images/favicon.png' />
-				<title>{titles[titleIndex]}</title>
+				<title>
+					{titleIcons[titleIndex]}MONEY MATCH{titleIcons[titleIndex]}
+				</title>
 			</Head>
 			{open ? (
 				<>
