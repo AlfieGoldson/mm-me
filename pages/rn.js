@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+
+const titles = [
+	'🤑🤑🤑🤑🤑',
+	'💰MONEY MATCH💰',
+	'💸🤑🤑🤑💸',
+	'💰MONEY MATCH💰',
+];
 
 export default function RN() {
 	const [open, setOpen] = useState(false);
+	const [titleIndex, setTitleIndex] = useState(0);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setTitleIndex(titleIndex >= titles.length - 1 ? 0 : titleIndex + 1);
+		}, 1000);
+	}, [titleIndex]);
 
 	return (
 		<>
 			<Head>
 				<link rel='shortcut icon' href='/images/favicon.png' />
+				<title>{titles[titleIndex]}</title>
 			</Head>
 			{open ? (
 				<>
